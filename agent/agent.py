@@ -1,9 +1,17 @@
+import os
+
+os.environ["SSL_CERT_FILE"] = ""
+os.environ["REQUESTS_CA_BUNDLE"] = ""
+
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
+
 import psutil
 import requests
 import time
 import socket
 
-SERVER_URL = "https://autopilot-probing-anemic.ngrok-free.dev/api/monitoring/update"
+SERVER_URL = "https://tech-monitor-backend-t8kp.onrender.com/api/monitoring/update"
 
 DEVICE_IP = socket.gethostbyname(
     socket.gethostname()
@@ -29,12 +37,15 @@ while True:
     try:
         data = get_data()
 
-        requests.post(
+        response = requests.post(
             SERVER_URL,
-            json=data
+            json=data,
+            timeout=10,
+            verify=False
         )
 
         print("Отправлено:", data)
+        print("Статус:", response.status_code)
 
     except Exception as e:
         print("Ошибка:", e)

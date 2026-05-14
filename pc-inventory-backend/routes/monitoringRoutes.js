@@ -1,10 +1,3 @@
-console.log("ROUTE LOADED");
-
-const express = require("express");
-const router = express.Router();
-
-const Device = require("../models/Device");
-
 router.post("/update", async (req, res) => {
   console.log("HIT");
   console.log("Пришло:", req.body);
@@ -18,7 +11,9 @@ router.post("/update", async (req, res) => {
   console.log("Найдено:", device);
 
   if (!device) {
-    return res.status(404).json({ message: "Устройство не найдено" });
+    return res.status(404).json({
+      message: "Устройство не найдено"
+    });
   }
 
   device.monitoring = {
@@ -29,11 +24,14 @@ router.post("/update", async (req, res) => {
     lastUpdate: new Date()
   };
 
+  // ONLINE STATUS
+  device.lastSeen = new Date();
+
   await device.save();
 
   console.log("СОХРАНЕНО");
 
-  res.json({ message: "ok" });
+  res.json({
+    message: "ok"
+  });
 });
-
-module.exports = router;
