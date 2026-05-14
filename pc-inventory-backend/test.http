@@ -1,0 +1,117 @@
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "123456",
+  "role": "admin"
+}
+
+###
+
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "123456"
+}
+
+###
+
+GET http://localhost:5000/api/devices
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZGQ2ZTlmMzY5ODA2MWUxMzg2MDc4OCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3NjExOTgyNCwiZXhwIjoxNzc2MjA2MjI0fQ.XYSLK97egNFIUMIZB_BcKRS5Pz8wi1gdQXjNlLMGAsc
+
+###
+
+POST http://localhost:5000/api/devices
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZGQ2ZTlmMzY5ODA2MWUxMzg2MDc4OCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3NjExOTgyNCwiZXhwIjoxNzc2MjA2MjI0fQ.XYSLK97egNFIUMIZB_BcKRS5Pz8wi1gdQXjNlLMGAsc
+
+{
+  "name": "PC-01",
+  "type": "ПК",
+  "inventoryNumber": "INV-001",
+  "room": "A-101",
+  "responsible": "Иванов",
+  "status": "active",
+  "lastCheckDate": "2026-04-13",
+  "ip": "192.168.0.10"
+}
+
+###
+
+GET http://localhost:5000/api/devices
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZGQ2ZTlmMzY5ODA2MWUxMzg2MDc4OCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3NjExOTgyNCwiZXhwIjoxNzc2MjA2MjI0fQ.XYSLK97egNFIUMIZB_BcKRS5Pz8wi1gdQXjNlLMGAsc
+
+###
+
+PUT http://localhost:5000/api/devices/69dd70663698061e1386078a
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZGQ2ZTlmMzY5ODA2MWUxMzg2MDc4OCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3NjExOTgyNCwiZXhwIjoxNzc2MjA2MjI0fQ.XYSLK97egNFIUMIZB_BcKRS5Pz8wi1gdQXjNlLMGAsc
+
+{
+  "status": "repair"
+}
+
+###
+
+DELETE http://localhost:5000/api/devices/69dd70663698061e1386078a
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZGQ2ZTlmMzY5ODA2MWUxMzg2MDc4OCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3NjExOTgyNCwiZXhwIjoxNzc2MjA2MjI0fQ.XYSLK97egNFIUMIZB_BcKRS5Pz8wi1gdQXjNlLMGAsc
+
+###
+
+PUT http://localhost:5000/api/devices/69dd70663698061e1386078a
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZGQ2ZTlmMzY5ODA2MWUxMzg2MDc4OCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3NjExOTgyNCwiZXhwIjoxNzc2MjA2MjI0fQ.XYSLK97egNFIUMIZB_BcKRS5Pz8wi1gdQXjNlLMGAsc
+
+{
+  "status": "active"
+}
+
+###
+
+POST http://localhost:5000/api/devices
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZGQ2ZTlmMzY5ODA2MWUxMzg2MDc4OCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3NjExOTgyNCwiZXhwIjoxNzc2MjA2MjI0fQ.XYSLK97egNFIUMIZB_BcKRS5Pz8wi1gdQXjNlLMGAsc
+
+{
+  "name": "PC-02",
+  "type": "ПК",
+  "inventoryNumber": "INV-002",
+  "room": "A-102",
+  "responsible": "Петров",
+  "status": "active",
+  "lastCheckDate": "2026-04-13",
+  "ip": "192.168.0.11"
+}
+
+###
+
+PUT http://localhost:5000/api/devices/69dd72e63915de16a7f095de
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZGQ2ZTlmMzY5ODA2MWUxMzg2MDc4OCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3NjExOTgyNCwiZXhwIjoxNzc2MjA2MjI0fQ.XYSLK97egNFIUMIZB_BcKRS5Pz8wi1gdQXjNlLMGAsc
+
+{
+  "status": "active"
+}
+
+###
+
+GET http://localhost:5000/api/history/69dd72e63915de16a7f095de
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZGQ2ZTlmMzY5ODA2MWUxMzg2MDc4OCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3NjExOTgyNCwiZXhwIjoxNzc2MjA2MjI0fQ.XYSLK97egNFIUMIZB_BcKRS5Pz8wi1gdQXjNlLMGAsc
+
+###
+
+PUT http://localhost:5000/api/devices/69dd72e63915de16a7f095de
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZGQ2ZTlmMzY5ODA2MWUxMzg2MDc4OCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3NjExOTgyNCwiZXhwIjoxNzc2MjA2MjI0fQ.XYSLK97egNFIUMIZB_BcKRS5Pz8wi1gdQXjNlLMGAsc
+
+{
+  "status": "repair"
+}
+
+###
+
+GET http://localhost:5000/api/history/69dd72e63915de16a7f095de
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZGQ2ZTlmMzY5ODA2MWUxMzg2MDc4OCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3NjExOTgyNCwiZXhwIjoxNzc2MjA2MjI0fQ.XYSLK97egNFIUMIZB_BcKRS5Pz8wi1gdQXjNlLMGAsc

@@ -1,0 +1,42 @@
+body {
+  background: #fff0f5;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #d63384;
+}
+
+input, select, button {
+  margin: 5px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: #f8c8dc;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #f4a6c1;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+h3 {
+  margin: 0;
+  color: #333;
+}
+
+p {
+  margin: 4px 0;
+}
