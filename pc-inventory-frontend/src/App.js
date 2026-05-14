@@ -349,6 +349,12 @@ if (!token) {
           return matchesSearch && matchesStatus;
         })
         .map((d) => {
+          const isOnline =
+  Date.now() -
+    new Date(
+      d.monitoring?.lastUpdate || 0
+    ).getTime() <
+  30000;
           const lastCheck = new Date(d.lastCheckDate);
           const now = new Date();
           const diffDays =
@@ -376,11 +382,11 @@ if (!token) {
 
   <span
     style={{
-  background: d.isOnline
+  background: isOnline
     ? "#dcfce7"
     : "#fee2e2",
 
-  color: d.isOnline
+  color: isOnline
     ? "#15803d"
     : "#b91c1c",
 
@@ -390,7 +396,7 @@ if (!token) {
   fontSize: "16px"
 }}
   >
-    {d.isOnline ? "Online" : "Offline"}
+    {isOnline ? "Online" : "Offline"}
   </span>
 </div>
 
