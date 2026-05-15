@@ -1,3 +1,8 @@
+const express = require("express");
+const router = express.Router();
+
+const Device = require("../models/Device");
+
 router.post("/update", async (req, res) => {
   console.log("HIT");
   console.log("Пришло:", req.body);
@@ -35,3 +40,5 @@ router.post("/update", async (req, res) => {
     message: "ok"
   });
 });
+
+module.exports = router;
